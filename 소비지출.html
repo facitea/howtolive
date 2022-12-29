@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <head>
+    <title>어떻게 살아야 할 것인가</title>
+    <meta charset="utf-8">
+  </head>
+  <style>
+    input{
+      text-align: right;
+      width: 50px;
+    }
+    .tableBox{
+      margin-bottom: 20px;
+    }
+  </style>
+  <body>
+    <h1>생활비 계산기</h1>
+    <div class="tableBox">
+      <table>
+        <tr>
+          <th>항목</th>
+          <th>금액</th>
+        </tr>
+        <tr>
+          <td>월급(세후)</td>
+          <td><input type="text" value="295" id="salary"></td>
+        </tr>
+        <tr>
+          <td>차할부</td>
+          <td><input type="text" value="33" id="ex1"></td>
+        </tr>
+        <tr>
+          <td>집세(관포)</td>
+          <td><input type="text" value="55" id="ex2"></td>
+        </tr>
+        <tr>
+          <td>통신</td>
+          <td><input type="text" value="5" id="ex3"></td>
+        </tr>
+        <tr>
+          <td>교통비</td>
+          <td><input type="text" value="14" id="ex4"></td>
+        </tr>
+        <tr>
+          <td>유류비</td>
+          <td><input type="text" value="15" id="ex5"></td>
+        </tr>
+        <tr>
+          <td>주택청약</td>
+          <td><input type="text" value="2" id="ex6"></td>
+        </tr>
+        <tr>
+          <td>적금</td>
+          <td><input type="text" value="50" id="ex7"></td>
+        </tr>
+        <tr>
+          <td>보험/구독</td>
+          <td><input type="text" value="5" id="ex8"></td>
+        </tr>
+        <tr>
+          <td>생활비</td>
+          <td><input type="text" value="60" id="ex9"></td>
+        </tr>
+        <tr>
+          <td><input type="text" placeholder="비고"></td>
+          <td><input type="text" value="0" id="ex10"></td>
+        </tr>
+        <tr>
+          <td><input type="text" placeholder="비고"></td>
+          <td><input type="text" value="0" id="ex11"></td>
+        </tr>
+        <tr>
+          <td><input type="text" placeholder="비고"></td>
+          <td><input type="text" value="0" id="ex12"></td>
+        </tr>
+      </table>
+      <button onclick="checkit()">확인</button>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <th>총 지출 시 남은 금액 = </th>
+          <th id="result">.</th>
+        </tr> 
+      </table>
+      
+    </div>
+
+
+
+    <script>
+      const checkit= ()=>{
+        let result;
+        let resultId = document.getElementById('result');
+        let salary = parseInt(document.getElementById('salary').value);
+        let ex1 = parseInt(document.getElementById('ex1').value);
+        let ex2 = parseInt(document.getElementById('ex2').value);
+        let ex3 = parseInt(document.getElementById('ex3').value);
+        let ex4 = parseInt(document.getElementById('ex4').value);
+        let ex5 = parseInt(document.getElementById('ex5').value);
+        let ex6 = parseInt(document.getElementById('ex6').value);
+        let ex7 = parseInt(document.getElementById('ex7').value);
+        let ex8 = parseInt(document.getElementById('ex8').value);
+        let ex9 = parseInt(document.getElementById('ex9').value);
+        let ex10 = parseInt(document.getElementById('ex10').value);
+        let ex11 = parseInt(document.getElementById('ex11').value);
+        let ex12 = parseInt(document.getElementById('ex12').value);
+        result = salary - (ex1 + ex2 + ex3 + ex4 + ex5 + ex6 + ex7 + ex8 + ex9 + ex10 + ex11 + ex12);
+
+        resultId.innerHTML = result+"만원";
+      }
+      
+    </script>
+  </body>
+</html>
